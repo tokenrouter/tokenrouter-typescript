@@ -232,7 +232,7 @@ export interface ResponseCreateParams {
    * Text, image, or file inputs to the model. Can be a simple string or an array of
    * content items.
    */
-  input: string | Array<ResponseCreateParams.UnionMember1>;
+  input: string | Array<ResponseCreateParams.InputItem>;
 
   /**
    * Run response generation in background
@@ -349,7 +349,7 @@ export interface ResponseCreateParams {
   /**
    * How the model should select tools
    */
-  tool_choice?: 'auto' | 'none' | 'required' | ResponseCreateParams.UnionMember1;
+  tool_choice?: 'auto' | 'none' | 'required' | ResponseCreateParams.ToolChoiceFunction;
 
   /**
    * Tools/functions the model may call
@@ -373,15 +373,15 @@ export interface ResponseCreateParams {
 }
 
 export namespace ResponseCreateParams {
-  export interface UnionMember1 {
-    image_url?: UnionMember1.ImageURL;
+  export interface InputItem {
+    image_url?: InputItem.ImageURL;
 
     text?: string;
 
     type?: 'text' | 'image_url' | 'image_file';
   }
 
-  export namespace UnionMember1 {
+  export namespace InputItem {
     export interface ImageURL {
       url?: string;
     }
@@ -429,13 +429,13 @@ export namespace ResponseCreateParams {
     }
   }
 
-  export interface UnionMember1 {
-    function?: UnionMember1.Function;
+  export interface ToolChoiceFunction {
+    function?: ToolChoiceFunction.Function;
 
     type?: 'function';
   }
 
-  export namespace UnionMember1 {
+  export namespace ToolChoiceFunction {
     export interface Function {
       name?: string;
     }
