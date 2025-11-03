@@ -1,6 +1,6 @@
 {
   "name": "tokenrouter",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "The official TypeScript library for the Tokenrouter API",
   "author": "Tokenrouter <support@tokenrouter.io>",
   "types": "dist/index.d.ts",
