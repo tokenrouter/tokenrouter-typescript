@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.16 (2025-11-03)
+
+Full Changelog: [v0.1.0...v1.0.16](https://github.com/tokenrouter/tokenrouter-typescript/compare/v0.1.0...v1.0.16)
+
 ## 0.1.0 (2025-11-03)
 
 Full Changelog: [v0.0.1...v0.1.0](https://github.com/tokenrouter/tokenrouter-typescript/compare/v0.0.1...v0.1.0)
