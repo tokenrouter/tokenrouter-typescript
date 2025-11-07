@@ -16,7 +16,29 @@ import * as Errors from './core/error';
 import * as Uploads from './core/uploads';
 import * as API from './resources/index';
 import { APIPromise } from './core/api-promise';
+import {
+  FirewallRule,
+  FirewallRuleCreateParams,
+  FirewallRuleCreateResponse,
+  FirewallRuleDeleteResponse,
+  FirewallRuleListResponse,
+  FirewallRuleRetrieveResponse,
+  FirewallRuleUpdateParams,
+  FirewallRuleUpdateResponse,
+  FirewallRules,
+} from './resources/firewall-rules';
 import { ResponseCreateParams, ResponseObject, ResponseReplayParams, Responses } from './resources/responses';
+import {
+  RoutingRule,
+  RoutingRuleCreateParams,
+  RoutingRuleCreateResponse,
+  RoutingRuleDeleteResponse,
+  RoutingRuleListResponse,
+  RoutingRuleRetrieveResponse,
+  RoutingRuleUpdateParams,
+  RoutingRuleUpdateResponse,
+  RoutingRules,
+} from './resources/routing-rules';
 import { type Fetch } from './internal/builtin-types';
 import { HeadersLike, NullableHeaders, buildHeaders } from './internal/headers';
 import { FinalRequestOptions, RequestOptions } from './internal/request-options';
@@ -32,7 +54,7 @@ import { isEmptyObj } from './internal/utils/values';
 
 const environments = {
   production: 'https://api.tokenrouter.io',
-  local: 'http://localhost:8002',
+  local: 'https://api.tokenrouter.test',
 };
 type Environment = keyof typeof environments;
 
@@ -50,7 +72,7 @@ export interface ClientOptions {
    *
    * Each environment maps to a different base URL:
    * - `production` corresponds to `https://api.tokenrouter.io`
-   * - `local` corresponds to `http://localhost:8002`
+   * - `local` corresponds to `https://api.tokenrouter.test`
    */
   environment?: Environment | undefined;
 
@@ -742,9 +764,13 @@ export class Tokenrouter {
   static toFile = Uploads.toFile;
 
   responses: API.Responses = new API.Responses(this);
+  routingRules: API.RoutingRules = new API.RoutingRules(this);
+  firewallRules: API.FirewallRules = new API.FirewallRules(this);
 }
 
 Tokenrouter.Responses = Responses;
+Tokenrouter.RoutingRules = RoutingRules;
+Tokenrouter.FirewallRules = FirewallRules;
 
 export declare namespace Tokenrouter {
   export type RequestOptions = Opts.RequestOptions;
@@ -754,5 +780,29 @@ export declare namespace Tokenrouter {
     type ResponseObject as ResponseObject,
     type ResponseCreateParams as ResponseCreateParams,
     type ResponseReplayParams as ResponseReplayParams,
+  };
+
+  export {
+    RoutingRules as RoutingRules,
+    type RoutingRule as RoutingRule,
+    type RoutingRuleCreateResponse as RoutingRuleCreateResponse,
+    type RoutingRuleRetrieveResponse as RoutingRuleRetrieveResponse,
+    type RoutingRuleUpdateResponse as RoutingRuleUpdateResponse,
+    type RoutingRuleListResponse as RoutingRuleListResponse,
+    type RoutingRuleDeleteResponse as RoutingRuleDeleteResponse,
+    type RoutingRuleCreateParams as RoutingRuleCreateParams,
+    type RoutingRuleUpdateParams as RoutingRuleUpdateParams,
+  };
+
+  export {
+    FirewallRules as FirewallRules,
+    type FirewallRule as FirewallRule,
+    type FirewallRuleCreateResponse as FirewallRuleCreateResponse,
+    type FirewallRuleRetrieveResponse as FirewallRuleRetrieveResponse,
+    type FirewallRuleUpdateResponse as FirewallRuleUpdateResponse,
+    type FirewallRuleListResponse as FirewallRuleListResponse,
+    type FirewallRuleDeleteResponse as FirewallRuleDeleteResponse,
+    type FirewallRuleCreateParams as FirewallRuleCreateParams,
+    type FirewallRuleUpdateParams as FirewallRuleUpdateParams,
   };
 }
