@@ -44,9 +44,25 @@ describe('resource responses', () => {
       stream: true,
       stream_options: { include_usage: true },
       temperature: 0.7,
-      text: { json_schema: { name: 'name', schema: {}, strict: true }, type: 'text' },
+      text: {
+        json_schema: {
+          name: 'name',
+          schema: {},
+          strict: true,
+        },
+        type: 'text',
+      },
       tool_choice: 'auto',
-      tools: [{ function: { description: 'description', name: 'name', parameters: {} }, type: 'function' }],
+      tools: [
+        {
+          function: {
+            description: 'description',
+            name: 'name',
+            parameters: {},
+          },
+          type: 'function',
+        },
+      ],
       top_logprobs: 0,
       top_p: 0.9,
       truncation: 'auto',
