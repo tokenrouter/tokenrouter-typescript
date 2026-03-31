@@ -8,7 +8,7 @@ const client = new Tokenrouter({
 });
 
 describe('resource responses', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.responses.create({ input: 'What is the capital of France?' });
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource responses', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.responses.create({
       input: 'What is the capital of France?',
@@ -69,7 +69,7 @@ describe('resource responses', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('replay', async () => {
     const responsePromise = client.responses.replay('req_a1b2c3d4-e5f6-7890-abcd-ef1234567890');
     const rawResponse = await responsePromise.asResponse();
@@ -81,7 +81,7 @@ describe('resource responses', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('replay: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(

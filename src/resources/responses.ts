@@ -5,6 +5,12 @@ import { APIPromise } from '../core/api-promise';
 import { RequestOptions } from '../internal/request-options';
 import { path } from '../internal/utils/path';
 
+/**
+ * Core endpoint for creating AI model responses with intelligent routing.
+ *
+ * The Responses API automatically routes your requests to the optimal AI provider
+ * based on your preferences, available models, and configured routing rules.
+ */
 export class Responses extends APIResource {
   /**
    * Creates a new AI model response by routing your request to the optimal provider
