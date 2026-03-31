@@ -5,6 +5,13 @@ import { APIPromise } from '../core/api-promise';
 import { RequestOptions } from '../internal/request-options';
 import { path } from '../internal/utils/path';
 
+/**
+ * Manage custom routing rules to control how TokenRouter selects AI providers and models.
+ *
+ * Routing rules enable fine-grained control over request routing based on content, metadata,
+ * or other conditions. Rules are evaluated in priority order and can force specific providers,
+ * models, or routing modes.
+ */
 export class RoutingRules extends APIResource {
   /**
    * Creates a new routing rule for the authenticated user.

@@ -5,6 +5,12 @@ import { APIPromise } from '../core/api-promise';
 import { RequestOptions } from '../internal/request-options';
 import { path } from '../internal/utils/path';
 
+/**
+ * Manage firewall rules for content filtering, security, and compliance.
+ *
+ * Firewall rules provide content security controls through pattern matching. Rules can detect
+ * and handle sensitive information, enforce policies, or implement custom content moderation.
+ */
 export class FirewallRules extends APIResource {
   /**
    * Creates a new firewall rule for the authenticated user.

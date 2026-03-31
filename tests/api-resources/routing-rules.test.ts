@@ -8,7 +8,7 @@ const client = new Tokenrouter({
 });
 
 describe('resource routingRules', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.routingRules.create({
       action_json: {},
@@ -26,7 +26,7 @@ describe('resource routingRules', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.routingRules.create({
       action_json: {},
@@ -37,7 +37,7 @@ describe('resource routingRules', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.routingRules.retrieve(1);
     const rawResponse = await responsePromise.asResponse();
@@ -49,7 +49,7 @@ describe('resource routingRules', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('update', async () => {
     const responsePromise = client.routingRules.update(1, {});
     const rawResponse = await responsePromise.asResponse();
@@ -61,7 +61,7 @@ describe('resource routingRules', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.routingRules.list();
     const rawResponse = await responsePromise.asResponse();
@@ -73,7 +73,7 @@ describe('resource routingRules', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('delete', async () => {
     const responsePromise = client.routingRules.delete(1);
     const rawResponse = await responsePromise.asResponse();
