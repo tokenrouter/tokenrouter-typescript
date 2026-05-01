@@ -141,7 +141,9 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 ```ts
 const client = new Tokenrouter();
 
-const response = await client.responses.create({ input: 'What is the capital of France?' }).asResponse();
+const response = await client.responses
+  .create({ input: 'What is the capital of France?' })
+  .asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
